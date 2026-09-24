@@ -3,37 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NWSDB Dashboard</title>
+  <title>NWSDB Kotte Region Dashboard</title>
   <style>
     body, html {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow: hidden;
+      background-color: #f4f6f9;
     }
     
-    .dashboard-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+    .app-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
     }
 
-    .dashboard-container iframe {
+    /* Custom Top Header */
+    .app-header {
+      background-color: #1a56db; /* NWSDB Blue */
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    .app-header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .app-header .subtitle {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+
+    /* Iframe Container */
+    .iframe-container {
+      flex-grow: 1;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .iframe-container iframe {
       position: absolute;
-      top: -28px; 
+      top: 0;
       left: 0;
       width: 100%;
-      height: calc(100% + 28px); 
+      height: 100%;
       border: none;
     }
   </style>
 </head>
 <body>
 
-  <div class="dashboard-container">
-    <iframe src="https://script.google.com/macros/s/AKfycbxzKuMjvX7RpI9_6ECI5DrBm6dj0fuNFWLgsipuBUc2CXjYFi3Th20wBgAO6eTZMoMS/exec"></iframe>
+  <div class="app-wrapper">
+    <!-- Custom Header to replace the standard look -->
+    <header class="app-header">
+      <div>
+        <h1>NWSDB Kotte Region 2026</h1>
+        <div class="subtitle">Letter & Document Operations Tracking</div>
+      </div>
+    </header>
+
+    <!-- The Dashboard -->
+    <div class="iframe-container">
+      <iframe src="https://script.google.com/macros/s/AKfycbxzKuMjvX7RpI9_6ECI5DrBm6dj0fuNFWLgsipuBUc2CXjYFi3Th20wBgAO6eTZMoMS/exec"></iframe>
+    </div>
   </div>
 
 </body>
